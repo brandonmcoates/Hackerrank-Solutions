@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    consecutive_ones = 0
+    max_consecutive = 0
+    
+    while n > 0:
+        remainder = n % 2
+        if remainder == 1:
+            consecutive_ones += 1
+            if consecutive_ones > max_consecutive:
+                max_consecutive = consecutive_ones
+        else:
+            consecutive_ones = 0
+        n = n // 2
+        
+    print(max_consecutive)
