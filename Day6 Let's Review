@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+testCases = int(input())
+
+for i in range(testCases):
+    phrase = input()
+    evenChar = ''
+    oddChar = ''
+    for j in range (len(phrase)):
+        if j % 2 == 0:
+            evenChar += phrase[j]
+        else:
+            oddChar += phrase[j]
+            
+    print('{} {}'.format(evenChar, oddChar))
+    
