@@ -1,6 +1,7 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-testCases = int(input())
+test_cases = int(input())
 
+"""
 for i in range(testCases):
     phrase = input()
     evenChar = ''
@@ -12,4 +13,10 @@ for i in range(testCases):
             oddChar += phrase[j]
             
     print('{} {}'.format(evenChar, oddChar))
+"""
     
+for i in range(test_cases):
+    phrase = input()
+    even_phrase = phrase[::2]
+    odd_phrase = phrase[1::2]
+    print(even_phrase, odd_phrase)
