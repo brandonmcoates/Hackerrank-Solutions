@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    def _hourglass_sum(hourglass, row, col):
+        sum = hourglass[row - 1][col - 1] + hourglass[row - 1][col] + hourglass[row - 1] [col + 1] + hourglass[row][col] + hourglass[row + 1][col - 1] + hourglass[row + 1][col] + hourglass[row + 1][col + 1]
+        return sum
+        
+    max_sum = -63
+    for i in range (1,5):
+        for j in range (1,5):
+            current_sum = _hourglass_sum(arr, i, j)
+            if current_sum > max_sum:
+                max_sum = current_sum
+                
+    print(max_sum)
